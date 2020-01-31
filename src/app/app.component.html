@@ -6,4 +6,26 @@
       </li>
     </ul>
   </div>
+  <div>
+    <h2>Articles</h2>
+    <ul>
+      <li *ngFor="let article of articles">
+        <h2>{{article.title}}</h2>
+        <img src="{{article.img}}" alt="">
+
+      </li>
+    </ul>
+  </div>
+
+  <button (click)="onSave()">Save</button>
+
+  <input type="text" [(ngModel)]="email" (keyup.enter)=onKeyUp()>
+  <br>
+  <input class="form-control" type="text" [(ngModel)]="firstnumber" >
+  <input class="form-control" type="text" [(ngModel)]="secondnumber" >
+  <input class="form-control" type="text" [(ngModel)]="result" >
+  <button  class="btn btn-primary" (click)="add()">Add</button>
+
 <router-outlet></router-outlet>
+
+
