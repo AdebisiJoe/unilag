@@ -1,0 +1,11 @@
+<form [formGroup]="form" (ngSubmit)="saveFaculty(form.value)">
+    <div class="form-group">
+      <label for="faculty">Faculty</label>
+      <input type="text" 
+      formControlName="faculty"
+      class="form-control" 
+      id="faculty">
+    </div>
+   
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>

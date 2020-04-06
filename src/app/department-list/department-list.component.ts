@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '../services/firebase.service';
 
 @Component({
   selector: 'app-department-list',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DepartmentListComponent implements OnInit {
 
-  constructor() { }
+  departments: Array<any>;
+  constructor( public firebaseService: FirebaseService) { }
 
   ngOnInit() {
+    this.getData();
+  }
+
+  getData(){
+    this.firebaseService.getDepartments()
+    .subscribe(result => {
+      this.departments = result;
+      
+    })
   }
 
 }

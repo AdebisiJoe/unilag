@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {  ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,13 +11,19 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { CreateDepartmentComponent } from './create-department/create-department.component';
+import { EditDepartmentsComponent } from './edit-departments/edit-departments.component';
+import { CreateFacultyComponent } from './create-faculty/create-faculty.component';
+import { ListFacultiesComponent } from './list-faculties/list-faculties.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalculatorComponent,
     DepartmentListComponent,
-    CreateDepartmentComponent
+    CreateDepartmentComponent,
+    EditDepartmentsComponent,
+    CreateFacultyComponent,
+    ListFacultiesComponent
   ],
   imports: [
     BrowserModule,

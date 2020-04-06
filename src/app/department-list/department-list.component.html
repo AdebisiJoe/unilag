@@ -1,1 +1,29 @@
-<p>department-list works!</p>
+<div>
+ <h2>Departments</h2>
+    <ul>
+      <li *ngFor="let department of departments">
+            {{department.payload.doc.data().department}}
+      </li>
+    </ul>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Department</th>
+          <th>faculty</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let department of departments">
+          <td>{{department.payload.doc.data().department}}</td>
+          <td>{{department.payload.doc.data().faculty}}</td>
+          <td>
+            <button class="btn btn-primary">Edit</button>
+            <button class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+</div>

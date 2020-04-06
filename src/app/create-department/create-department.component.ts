@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { DepartmentValidators } from './department.validator';
+import { FirebaseService } from '../services/firebase.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-create-department',
   templateUrl: './create-department.component.html',
@@ -8,14 +10,42 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class CreateDepartmentComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public firebaseService: FirebaseService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
   }
 
   form= new FormGroup({
-    'username':new FormControl(),
-    'password':new FormControl(),
+    department:new FormControl('',[
+      Validators.required,
+      Validators.minLength(3),
+    ]),
+    faculty:new FormControl('',[
+      Validators.required,
+      Validators.minLength(3),
+    ]),
   });
 
+  get department(){
+    return this.form.get('department');
+  }
+
+  get faculty(){
+    return this.form.get('faculty');
+  }
+
+  
+
+  saveDepartment(value){
+    this.firebaseService.createDepartment(value)
+    .then(
+      res => {
+        console.log(res);
+        //this.router.navigate(['/home']);
+      }
+    )
+  }
 }
