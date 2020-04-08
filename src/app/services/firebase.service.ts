@@ -26,4 +26,8 @@ export class FirebaseService {
   checkifDepartmentAlreadyExist(){
    
   }
+
+  getDepartment(userKey){
+    return this.db.collection('departments').doc(userKey).snapshotChanges();
+  }
 }
