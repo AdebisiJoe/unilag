@@ -20,7 +20,7 @@
           <td>{{department.payload.doc.data().faculty}}</td>
           <td>
             <button class="btn btn-primary" (click)="viewEditPage(department)">Edit</button>
-            <button class="btn btn-danger">Delete</button>
+            <button class="btn btn-danger"  (click)="deleteDepartment(department)">Delete</button>
           </td>
         </tr>
         

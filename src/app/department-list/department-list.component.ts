@@ -28,4 +28,18 @@ export class DepartmentListComponent implements OnInit {
     this.router.navigate(['/edit-departments/'+ item.payload.doc.id]);
   }
 
+  deleteDepartment(item){
+    let departmentId=item.payload.doc.id;
+    this.firebaseService.deleteDepartment(departmentId)
+    .then(
+      res => {
+        this.router.navigate(['/department']);
+      },
+      err => {
+        console.log(err);
+      }
+    )
+    
+  }
+
 }
