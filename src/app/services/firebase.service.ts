@@ -41,4 +41,8 @@ export class FirebaseService {
       });
   }
 
+  deleteDepartment(departmentKey){
+    return this.db.collection('departments').doc(departmentKey).delete();
+  }
+
 }
