@@ -44,7 +44,7 @@ export class CreateDepartmentComponent implements OnInit {
     .then(
       res => {
         console.log(res);
-        //this.router.navigate(['/home']);
+        this.router.navigate(['/department']);
       }
     )
   }

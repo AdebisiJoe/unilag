@@ -15,6 +15,7 @@ export class EditDepartmentResolver implements Resolve<any> {
       .subscribe(
         data => {
           resolve(data);
+          console.log(data);
         }
       );
     })

@@ -1,1 +1,34 @@
-<p>edit-departments works!</p>
+<form [formGroup]="form" (ngSubmit)="saveDepartment(form.value)">
+    <!-- <div *ngIf="form.errors" class="alert alert-danger">
+        The username or password is invalid.
+    </div> -->
+    <div class="form-group">
+        <label for="department">Department</label>
+        <input 
+            formControlName="department"
+            id="department" 
+            type="text" 
+            class="form-control">
+        
+        <div *ngIf="department.touched && department.invalid" class="alert alert-danger">
+           <div *ngIf="department.errors.required">Department is required</div>
+           <div *ngIf="department.errors.required">Department should be minimum 3 characters</div>           
+           
+        </div>    
+    </div>
+    <div class="form-group">
+        <label for="faculty">Faculty</label>
+        <input 
+            formControlName="faculty"
+            id="faculty" 
+            type="text" 
+            class="form-control" >
+
+        <div *ngIf="faculty.touched && faculty.invalid" class="alert alert-danger">
+            <div *ngIf="faculty.errors.required">faculty is required</div>
+            <div *ngIf="faculty.errors.required">faculty should be minimum 3 characters</div> 
+            
+        </div>     
+    </div>
+    <button class="btn btn-primary" type="submit">Edit Department</button>
+</form>

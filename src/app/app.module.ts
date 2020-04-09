@@ -14,7 +14,7 @@ import { CreateDepartmentComponent } from './create-department/create-department
 import { EditDepartmentsComponent } from './edit-departments/edit-departments.component';
 import { CreateFacultyComponent } from './create-faculty/create-faculty.component';
 import { ListFacultiesComponent } from './list-faculties/list-faculties.component';
-
+import { EditDepartmentResolver } from './edit-departments/edit-departments.resolver';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +33,7 @@ import { ListFacultiesComponent } from './list-faculties/list-faculties.componen
     AngularFirestoreModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [EditDepartmentResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -27,7 +27,18 @@ export class FirebaseService {
    
   }
 
-  getDepartment(userKey){
-    return this.db.collection('departments').doc(userKey).snapshotChanges();
+  getDepartment(departmentKey){
+    return this.db.collection('departments').doc(departmentKey).snapshotChanges();
   }
+  
+  editDepartment(departmentKey, value){
+   
+      
+      return this.db.collection('departments').doc(departmentKey).set({
+        department: value.department,
+        faculty: value.faculty,
+        departmentToSearch: value.department.toLowerCase(),
+      });
+  }
+
 }
